@@ -5,6 +5,7 @@
  */
 package br.com.siscom.view;
 
+import br.com.siscom.view.ClienteEditView;
 import java.awt.EventQueue;
 import java.beans.Beans;
 import java.util.ArrayList;
@@ -44,217 +45,161 @@ public class ClienteView extends JPanel {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("siscomjavaPU").createEntityManager();
         query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT C FROM Cliente C");
         list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
-        clienteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Cliente c");
-        clienteList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : clienteQuery.getResultList();
         jPanel1 = new javax.swing.JPanel();
         masterScrollPane = new javax.swing.JScrollPane();
         masterTable = new javax.swing.JTable();
+        newButton = new javax.swing.JButton();
         masterScrollPane = new javax.swing.JScrollPane();
         masterTable = new javax.swing.JTable();
-        newButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        detailScrollPane = new javax.swing.JScrollPane();
+        detailTable = new javax.swing.JTable();
+        detailScrollPane = new javax.swing.JScrollPane();
+        detailTable = new javax.swing.JTable();
         saveButton = new javax.swing.JButton();
-        deleteDetailButton = new javax.swing.JButton();
-        detailScrollPane = new javax.swing.JScrollPane();
-        detailTable = new javax.swing.JTable();
         refreshButton = new javax.swing.JButton();
-        detailScrollPane = new javax.swing.JScrollPane();
-        detailTable = new javax.swing.JTable();
+        deleteDetailButton = new javax.swing.JButton();
         newDetailButton = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(51, 102, 255)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do Cliente"));
 
-        masterTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome ", "Órgão Expeditor", "Data de Nascimento ", " Cliente Desde", "   Profissao ", "   Empresa ", "    Renda ", "Tipo cliente", "Cnpj cliente", "Referencia ", "        CPF", " Identidade", "  Telefone Empresa", "telefone Referencia ", "foto"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        masterTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, clienteList, masterTable);
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nomeCliente}"));
-        columnBinding.setColumnName("Nome ");
+        columnBinding.setColumnName("Nome Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${orgaoCliente}"));
-        columnBinding.setColumnName("Órgão Expeditor");
+        columnBinding.setColumnName("Orgao Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nascimentoCliente}"));
-        columnBinding.setColumnName("Data de Nascimento ");
+        columnBinding.setColumnName("Nascimento Cliente");
         columnBinding.setColumnClass(java.util.Date.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${desdeCliente}"));
-        columnBinding.setColumnName(" Cliente Desde");
+        columnBinding.setColumnName("Desde Cliente");
         columnBinding.setColumnClass(java.util.Date.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${profissaoCliente}"));
-        columnBinding.setColumnName("   Profissao ");
+        columnBinding.setColumnName("Profissao Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${empresaCliente}"));
-        columnBinding.setColumnName("   Empresa ");
+        columnBinding.setColumnName("Empresa Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${rendaCliente}"));
-        columnBinding.setColumnName("    Renda ");
+        columnBinding.setColumnName("Renda Cliente");
         columnBinding.setColumnClass(Float.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${tipoCliente}"));
-        columnBinding.setColumnName("Tipo cliente");
+        columnBinding.setColumnName("Tipo Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cnpjCliente}"));
-        columnBinding.setColumnName("Cnpj cliente");
+        columnBinding.setColumnName("Cnpj Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${referenciaCliente}"));
-        columnBinding.setColumnName("Referencia ");
+        columnBinding.setColumnName("Referencia Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cpfCliente}"));
-        columnBinding.setColumnName("        CPF");
+        columnBinding.setColumnName("Cpf Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${rgCliente}"));
-        columnBinding.setColumnName(" Identidade");
+        columnBinding.setColumnName("Rg Cliente");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneEmpresa}"));
-        columnBinding.setColumnName("  Telefone Empresa");
+        columnBinding.setColumnName("Fone Empresa");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneReferenciaCliente}"));
-        columnBinding.setColumnName("telefone Referencia ");
+        columnBinding.setColumnName("Fone Referencia Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foto}"));
+        columnBinding.setColumnName("Foto");
         columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
+
         masterScrollPane.setViewportView(masterTable);
-        if (masterTable.getColumnModel().getColumnCount() > 0) {
-            masterTable.getColumnModel().getColumn(0).setPreferredWidth(200);
-            masterTable.getColumnModel().getColumn(1).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(2).setPreferredWidth(130);
-            masterTable.getColumnModel().getColumn(3).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(4).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(5).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(10).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(11).setPreferredWidth(80);
-            masterTable.getColumnModel().getColumn(12).setPreferredWidth(130);
-            masterTable.getColumnModel().getColumn(13).setPreferredWidth(130);
-        }
 
-        masterTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome ", "Órgão Expeditor", "Data de Nascimento ", " Cliente Desde", "   Profissao ", "   Empresa ", "    Renda ", "Tipo cliente", "Cnpj cliente", "Referencia ", "        CPF", " Identidade", "  Telefone Empresa", "telefone Referencia ", "foto"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        masterTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-
-        jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, clienteList, masterTable);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nomeCliente}"));
-        columnBinding.setColumnName("Nome ");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${orgaoCliente}"));
-        columnBinding.setColumnName("Órgão Expeditor");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nascimentoCliente}"));
-        columnBinding.setColumnName("Data de Nascimento ");
-        columnBinding.setColumnClass(java.util.Date.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${desdeCliente}"));
-        columnBinding.setColumnName(" Cliente Desde");
-        columnBinding.setColumnClass(java.util.Date.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${profissaoCliente}"));
-        columnBinding.setColumnName("   Profissao ");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${empresaCliente}"));
-        columnBinding.setColumnName("   Empresa ");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${rendaCliente}"));
-        columnBinding.setColumnName("    Renda ");
-        columnBinding.setColumnClass(Float.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${tipoCliente}"));
-        columnBinding.setColumnName("Tipo cliente");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cnpjCliente}"));
-        columnBinding.setColumnName("Cnpj cliente");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${referenciaCliente}"));
-        columnBinding.setColumnName("Referencia ");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cpfCliente}"));
-        columnBinding.setColumnName("        CPF");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${rgCliente}"));
-        columnBinding.setColumnName(" Identidade");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneEmpresa}"));
-        columnBinding.setColumnName("  Telefone Empresa");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneReferenciaCliente}"));
-        columnBinding.setColumnName("telefone Referencia ");
-        columnBinding.setColumnClass(String.class);
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
-        masterScrollPane.setViewportView(masterTable);
-        if (masterTable.getColumnModel().getColumnCount() > 0) {
-            masterTable.getColumnModel().getColumn(0).setPreferredWidth(200);
-            masterTable.getColumnModel().getColumn(1).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(2).setPreferredWidth(130);
-            masterTable.getColumnModel().getColumn(3).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(4).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(5).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(10).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(11).setPreferredWidth(80);
-            masterTable.getColumnModel().getColumn(12).setPreferredWidth(130);
-            masterTable.getColumnModel().getColumn(13).setPreferredWidth(130);
-        }
-        if (masterTable.getColumnModel().getColumnCount() > 0) {
-            masterTable.getColumnModel().getColumn(0).setPreferredWidth(200);
-            masterTable.getColumnModel().getColumn(1).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(2).setPreferredWidth(130);
-            masterTable.getColumnModel().getColumn(3).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(4).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(5).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(10).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(11).setPreferredWidth(80);
-            masterTable.getColumnModel().getColumn(12).setPreferredWidth(130);
-            masterTable.getColumnModel().getColumn(13).setPreferredWidth(130);
-        }
-
-        newButton.setText("New");
+        newButton.setText("Inserir Cliente");
         newButton.addActionListener(formListener);
 
-        deleteButton.setText("Delete");
+        jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nomeCliente}"));
+        columnBinding.setColumnName("Nome Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${orgaoCliente}"));
+        columnBinding.setColumnName("Orgao Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nascimentoCliente}"));
+        columnBinding.setColumnName("Nascimento Cliente");
+        columnBinding.setColumnClass(java.util.Date.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${desdeCliente}"));
+        columnBinding.setColumnName("Desde Cliente");
+        columnBinding.setColumnClass(java.util.Date.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${profissaoCliente}"));
+        columnBinding.setColumnName("Profissao Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${empresaCliente}"));
+        columnBinding.setColumnName("Empresa Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${rendaCliente}"));
+        columnBinding.setColumnName("Renda Cliente");
+        columnBinding.setColumnClass(Float.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${tipoCliente}"));
+        columnBinding.setColumnName("Tipo Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cnpjCliente}"));
+        columnBinding.setColumnName("Cnpj Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${referenciaCliente}"));
+        columnBinding.setColumnName("Referencia Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cpfCliente}"));
+        columnBinding.setColumnName("Cpf Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${rgCliente}"));
+        columnBinding.setColumnName("Rg Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneEmpresa}"));
+        columnBinding.setColumnName("Fone Empresa");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneReferenciaCliente}"));
+        columnBinding.setColumnName("Fone Referencia Cliente");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foto}"));
+        columnBinding.setColumnName("Foto");
+        columnBinding.setColumnClass(String.class);
+        bindingGroup.addBinding(jTableBinding);
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        masterScrollPane.setViewportView(masterTable);
+
+        deleteButton.setText("Excluir Cliente");
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         deleteButton.addActionListener(formListener);
+
+        jButton1.setText("Editar Cliente");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), jButton1, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        jButton1.addActionListener(formListener);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(211, 211, 211)
                         .addComponent(newButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteButton))
-                    .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deleteButton)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(masterScrollPane)))
                 .addContainerGap())
         );
 
@@ -263,27 +208,17 @@ public class ClienteView extends JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                .addGap(17, 17, 17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteButton)
-                    .addComponent(newButton))
+                    .addComponent(newButton)
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereços do Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(51, 102, 255)));
-
-        saveButton.setText("Save");
-        saveButton.addActionListener(formListener);
-
-        deleteDetailButton.setText("Delete");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, detailTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteDetailButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        deleteDetailButton.addActionListener(formListener);
-
-        detailTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereço do Cliente"));
 
         org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${selectedElement.clienteEnderecoList}");
         jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, eLProperty, detailTable);
@@ -307,21 +242,8 @@ public class ClienteView extends JPanel {
         columnBinding.setColumnClass(String.class);
         jTableBinding.setSourceUnreadableValue(java.util.Collections.emptyList());
         bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
+
         detailScrollPane.setViewportView(detailTable);
-        if (detailTable.getColumnModel().getColumnCount() > 0) {
-            detailTable.getColumnModel().getColumn(0).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(1).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(2).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(3).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(4).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(5).setPreferredWidth(100);
-        }
-
-        refreshButton.setText("Refresh");
-        refreshButton.addActionListener(formListener);
-
-        detailTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
 
         eLProperty = org.jdesktop.beansbinding.ELProperty.create("${selectedElement.clienteEnderecoList}");
         jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, eLProperty, detailTable);
@@ -345,26 +267,23 @@ public class ClienteView extends JPanel {
         columnBinding.setColumnClass(String.class);
         jTableBinding.setSourceUnreadableValue(java.util.Collections.emptyList());
         bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
-        detailScrollPane.setViewportView(detailTable);
-        if (detailTable.getColumnModel().getColumnCount() > 0) {
-            detailTable.getColumnModel().getColumn(0).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(1).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(2).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(3).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(4).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(5).setPreferredWidth(100);
-        }
-        if (detailTable.getColumnModel().getColumnCount() > 0) {
-            detailTable.getColumnModel().getColumn(0).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(1).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(2).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(3).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(4).setPreferredWidth(150);
-            detailTable.getColumnModel().getColumn(5).setPreferredWidth(100);
-        }
 
-        newDetailButton.setText("New");
+        detailScrollPane.setViewportView(detailTable);
+
+        saveButton.setText("Salvar dados");
+        saveButton.addActionListener(formListener);
+
+        refreshButton.setText("Cancelar Alterações");
+        refreshButton.addActionListener(formListener);
+
+        deleteDetailButton.setText("Excluir Endereço");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, detailTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteDetailButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        deleteDetailButton.addActionListener(formListener);
+
+        newDetailButton.setText("Inserir Endereço");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), newDetailButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
@@ -379,7 +298,7 @@ public class ClienteView extends JPanel {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 38, Short.MAX_VALUE)
+                        .addGap(0, 216, Short.MAX_VALUE)
                         .addComponent(newDetailButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(deleteDetailButton)
@@ -387,7 +306,7 @@ public class ClienteView extends JPanel {
                         .addComponent(refreshButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(saveButton))
-                    .addComponent(detailScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE))
+                    .addComponent(detailScrollPane))
                 .addContainerGap())
         );
 
@@ -454,6 +373,9 @@ public class ClienteView extends JPanel {
             else if (evt.getSource() == newDetailButton) {
                 ClienteView.this.newDetailButtonActionPerformed(evt);
             }
+            else if (evt.getSource() == jButton1) {
+                ClienteView.this.jButton1ActionPerformed(evt);
+            }
         }
     }// </editor-fold>//GEN-END:initComponents
 
@@ -476,6 +398,7 @@ public class ClienteView extends JPanel {
             bean.ClienteEndereco c = iter.next();
             toRemove.add(c);
             entityManager.remove(c);
+           
         }
         cs.removeAll(toRemove);
         masterTable.clearSelection();
@@ -496,7 +419,7 @@ public class ClienteView extends JPanel {
         cs.add(c);
         masterTable.clearSelection();
         masterTable.setRowSelectionInterval(index, index);
-        int row = cs.size() - 1;
+        int row = cs.size()-1;
         detailTable.setRowSelectionInterval(row, row);
         detailTable.scrollRectToVisible(detailTable.getCellRect(row, 0, true));
     }//GEN-LAST:event_newDetailButtonActionPerformed
@@ -526,12 +449,26 @@ public class ClienteView extends JPanel {
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
+                
         bean.Cliente C = new bean.Cliente();
         entityManager.persist(C);
         list.add(C);
-        int row = list.size() - 1;
+        int row = list.size()-1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
+        
+        //JFrame frame = new JFrame();
+        ClienteEditView ce = new ClienteEditView(null,true);
+        ce.setRegistroAtual(C);
+        ce.setVisible(true);
+        
+        if(ce.isConfirmaCliente()){
+            saveButton.doClick(); 
+        
+        }else{
+            refreshButton.doClick();
+        }
+        
     }//GEN-LAST:event_newButtonActionPerformed
     
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
@@ -550,15 +487,27 @@ public class ClienteView extends JPanel {
         }
     }//GEN-LAST:event_saveButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       ClienteEditView ce = new ClienteEditView(null,true);
+        ce.setRegistroAtual(list.get(masterTable.getSelectedRow()));
+        ce.setVisible(true);
+        
+        if(ce.isConfirmaCliente()){
+            saveButton.doClick(); 
+        
+        }else{
+            refreshButton.doClick();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.util.List<bean.Cliente> clienteList;
-    private javax.persistence.Query clienteQuery;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton deleteDetailButton;
     private javax.swing.JScrollPane detailScrollPane;
     private javax.swing.JTable detailTable;
     private javax.persistence.EntityManager entityManager;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private java.util.List<bean.Cliente> list;
@@ -600,10 +549,10 @@ public class ClienteView extends JPanel {
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new ClienteView());
-                //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
                 frame.setTitle(args[0]);
+               
             }
         });
     }

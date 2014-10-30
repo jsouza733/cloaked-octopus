@@ -5,7 +5,6 @@
  */
 package bean;
 
-import bean.Cliente;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
@@ -171,7 +170,7 @@ public class ClienteEndereco implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.ClienteEndereco[ codEndereco=" + codEndereco + " ]";
+        return "bean.ClienteEndereco[ codEndereco=" + codEndereco + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

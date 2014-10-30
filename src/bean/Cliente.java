@@ -5,6 +5,7 @@
  */
 package bean;
 
+import br.com.siscom.view.ClienteEditView;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
@@ -24,9 +25,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import br.com.siscom.view.AbrindoImagem.*;
 
-/**
+     
+/** 
  *
  * @author moises
  */
@@ -48,8 +49,8 @@ import br.com.siscom.view.AbrindoImagem.*;
     @NamedQuery(name = "Cliente.findByCpfCliente", query = "SELECT c FROM Cliente c WHERE c.cpfCliente = :cpfCliente"),
     @NamedQuery(name = "Cliente.findByRgCliente", query = "SELECT c FROM Cliente c WHERE c.rgCliente = :rgCliente"),
     @NamedQuery(name = "Cliente.findByFoneEmpresa", query = "SELECT c FROM Cliente c WHERE c.foneEmpresa = :foneEmpresa"),
-    @NamedQuery(name = "Cliente.findByFoto", query = "SELECT c FROM Cliente c WHERE c.foto = :foto"),
-    @NamedQuery(name = "Cliente.findByFoneReferenciaCliente", query = "SELECT c FROM Cliente c WHERE c.foneReferenciaCliente = :foneReferenciaCliente")})
+    @NamedQuery(name = "Cliente.findByFoneReferenciaCliente", query = "SELECT c FROM Cliente c WHERE c.foneReferenciaCliente = :foneReferenciaCliente"),
+    @NamedQuery(name = "Cliente.findByFoto", query = "SELECT c FROM Cliente c WHERE c.foto = :foto")})
 public class Cliente implements Serializable {
     @Transient
     private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
@@ -61,8 +62,6 @@ public class Cliente implements Serializable {
     private Integer codCliente;
     @Column(name = "nome_cliente")
     private String nomeCliente;
-    @Column(name = "foto")
-    private String foto;
     @Column(name = "orgao_cliente")
     private String orgaoCliente;
     @Column(name = "nascimento_cliente")
@@ -92,6 +91,8 @@ public class Cliente implements Serializable {
     private String foneEmpresa;
     @Column(name = "fone_referencia_cliente")
     private String foneReferenciaCliente;
+    @Column(name = "foto")
+    private String foto;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "codCliente")
     private List<ClienteEndereco> clienteEnderecoList;
 
@@ -111,18 +112,6 @@ public class Cliente implements Serializable {
         this.codCliente = codCliente;
         changeSupport.firePropertyChange("codCliente", oldCodCliente, codCliente);
     }
-    
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        String oldFoto = this.foto;
-        this.foto = foto;
-        changeSupport.firePropertyChange("foto", oldFoto, foto);
-    }
-    
-    
 
     public String getNomeCliente() {
         return nomeCliente;
@@ -156,7 +145,7 @@ public class Cliente implements Serializable {
 
     public Date getDesdeCliente() {
         return desdeCliente;
-    }
+        }
 
     public void setDesdeCliente(Date desdeCliente) {
         Date oldDesdeCliente = this.desdeCliente;
@@ -263,8 +252,31 @@ public class Cliente implements Serializable {
         this.foneReferenciaCliente = foneReferenciaCliente;
         changeSupport.firePropertyChange("foneReferenciaCliente", oldFoneReferenciaCliente, foneReferenciaCliente);
     }
+    
+    
+     public String getFoto() {
+        return foto;
+    }
 
-    public List<ClienteEndereco> getClienteEnderecoList() {
+    public void setFoto(String foto) {
+        String oldFoto = this.foto;
+        this.foto = foto;
+        changeSupport.firePropertyChange("foto", oldFoto, foto);
+    }
+    
+    
+    /* public String getFoto() {
+        return ClienteEditView.caminho;
+    }
+
+    public void setFoto(String foto) {
+        String oldFoto = this.foto;
+        this.foto = ClienteEditView.caminho;
+        changeSupport.firePropertyChange("foto", oldFoto, ClienteEditView.caminho);
+    }
+    */
+    
+        public List<ClienteEndereco> getClienteEnderecoList() {
         return clienteEnderecoList;
     }
 
@@ -294,7 +306,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Cliente[ codCliente=" + codCliente + " ]";
+        return "bean.Cliente[ codCliente=" + codCliente + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
@@ -304,5 +316,7 @@ public class Cliente implements Serializable {
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         changeSupport.removePropertyChangeListener(listener);
     }
+    
+    
     
 }

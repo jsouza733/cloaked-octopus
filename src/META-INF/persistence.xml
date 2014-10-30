@@ -7,6 +7,8 @@
     <class>bean.TipoPgto</class>
     <class>bean.ClienteEndereco</class>
     <class>bean.Cliente</class>
+    <class>bean.Fornecedor</class>
+    <class>bean.Produto</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/siscomjava"/>
       <property name="javax.persistence.jdbc.password" value="Moises@125"/>
