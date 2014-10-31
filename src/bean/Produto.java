@@ -5,6 +5,7 @@
  */
 package bean;
 
+
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
@@ -14,6 +15,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -40,7 +43,6 @@ public class Produto implements Serializable {
     private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "cod_produto")
     private Integer codProduto;
@@ -55,11 +57,14 @@ public class Produto implements Serializable {
     private Integer estoqueProduto;
     @Column(name = "critico_produto")
     private Integer criticoProduto;
-    @Column(name = "cod_unidade")
-    private Integer codUnidade;
+    
+    @JoinColumn(name = "cod_unidade", referencedColumnName = "cod_unidade")
+    @ManyToOne
+    private Unidade codUnidade; 
+    
     @Column(name = "cod_fornecedor")
     private Integer codFornecedor;
-
+    
     public Produto() {
     }
 
@@ -127,12 +132,12 @@ public class Produto implements Serializable {
         changeSupport.firePropertyChange("criticoProduto", oldCriticoProduto, criticoProduto);
     }
 
-    public Integer getCodUnidade() {
+    public Unidade getCodUnidade() {
         return codUnidade;
     }
 
-    public void setCodUnidade(Integer codUnidade) {
-        Integer oldCodUnidade = this.codUnidade;
+    public void setCodUnidade(Unidade codUnidade) {
+        Unidade oldCodUnidade = this.codUnidade;
         this.codUnidade = codUnidade;
         changeSupport.firePropertyChange("codUnidade", oldCodUnidade, codUnidade);
     }
@@ -179,5 +184,6 @@ public class Produto implements Serializable {
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         changeSupport.removePropertyChangeListener(listener);
     }
-    
+
+        
 }
