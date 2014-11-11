@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bean;
+package renderer;
 
-import br.com.siscom.view.ClienteEditView;
+import renderer.ClienteEndereco;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;

@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.siscom.view;
+package cadastro;
 
+import renderer.ClienteView;
+import cadastro.FuncionarioView;
 import utilitarios.data;
 
 /**
@@ -301,6 +303,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem7.setMnemonic('n');
         jMenuItem7.setText("Funcionários");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem7);
         jMenu1.add(jSeparator3);
 
@@ -490,7 +497,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
+       String args[] = new String[1];
+       args[0]= "Cadastro de Departamentos";        
+      DepartamentoView.main(args);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
@@ -539,6 +548,12 @@ public class Menu extends javax.swing.JFrame {
        args [0]="Cadastro de Plano de Contas";
        PlanoContaView.main(args);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        String args[] = new String[1];
+       args [0]="Cadastro de Funcionários";
+       FuncionarioView.main(args);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments

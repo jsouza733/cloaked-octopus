@@ -5,12 +5,15 @@
     <class>bean.Banco</class>
     <class>bean.Cartao</class>
     <class>bean.TipoPgto</class>
-    <class>bean.ClienteEndereco</class>
-    <class>bean.Cliente</class>
     <class>bean.Fornecedor</class>
     <class>bean.Produto</class>
     <class>bean.Unidade</class>
     <class>bean.Planoconta</class>
+    <class>bean.Departamento</class>
+    <class>bean.Cep</class>
+    <class>bean.Funcionario</class>
+    <class>renderer.ClienteEndereco</class>
+    <class>renderer.Cliente</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/siscomjava"/>
       <property name="javax.persistence.jdbc.password" value="Moises@125"/>

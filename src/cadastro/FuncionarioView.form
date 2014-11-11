@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.persistence.EntityManager" name="entityManager">
+      <Properties>
+        <Property name="persistenceUnit" type="java.lang.String" value="siscomjavaPU"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.persistence.Query" name="query">
+      <Properties>
+        <Property name="query" type="java.lang.String" value="SELECT f FROM Funcionario f"/>
+        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
+          <ComponentRef name="entityManager"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+      </AuxValues>
+    </Component>
+    <Component class="java.util.List" name="list">
+      <Properties>
+        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
+          <ComponentRef name="query"/>
+        </Property>
+        <Property name="observable" type="boolean" value="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;bean.Funcionario&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.persistence.Query" name="departamentoQuery">
+      <Properties>
+        <Property name="query" type="java.lang.String" value="SELECT d FROM Departamento d"/>
+        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
+          <ComponentRef name="entityManager"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="java.util.List" name="departamentoList">
+      <Properties>
+        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
+          <ComponentRef name="departamentoQuery"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;bean.Departamento&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="renderer.DepartamentoListCellRenderer" name="departamentoListCellRenderer1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="departamentoListCellRenderer1"/>
+      </Properties>
+    </Component>
+    <Component class="Converter.RowSorterToStringConverter" name="rowSorterToStringConverter1">
+      <Properties>
+        <Property name="table" type="javax.swing.JTable" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="masterTable"/>
+        </Property>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="escolherImagem" min="-2" pref="1" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" min="-2" pref="307" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="escolherImagem" min="-2" pref="0" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel3">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <Component id="newButton" linkSize="1" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="81" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="deleteButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="refreshButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="saveButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="saveButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="newButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="saveButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Confirmar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="refreshButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancelar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refreshButtonActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="newButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Inserir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newButtonActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="deleteButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Exluir"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="deleteButton" targetPath="enabled" updateStrategy="1" immediately="false"/>
+          </BindingProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteButtonActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Alterar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JFileChooser" name="escolherImagem">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="escolherImagemActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Mestre"/>
+              </Border>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Rela&#xe7;&#xe3;o de Funcion&#xe1;rios">
+                <Property name="tabTitle" type="java.lang.String" value="Rela&#xe7;&#xe3;o de Funcion&#xe1;rios"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel1" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="masterScrollPane" min="-2" pref="1115" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="191" max="32767" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="masterScrollPane" min="-2" pref="177" max="-2" attributes="0"/>
+                          <EmptySpace pref="68" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="masterScrollPane">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="masterTable">
+                  <Properties>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="120" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="80" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="130" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="80" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="40" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="80" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="80" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="120" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="80" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="80" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="30" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="elements" source="list" target="masterTable" targetPath="elements" updateStrategy="0" immediately="true">
+                      <Subbinding sourcePath="${nomeFuncionario}">
+                        <BindingParameter name="NAME" value="     Nome"/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${cpfFuncionario}">
+                        <BindingParameter name="NAME" value="    Cpf "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${rgFuncionario}">
+                        <BindingParameter name="NAME" value="    Rg "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${orgaoFuncionario}">
+                        <BindingParameter name="NAME" value="Orgao Exp."/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${cepFuncionario}">
+                        <BindingParameter name="NAME" value="   Cep "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${enderecoFuncionario}">
+                        <BindingParameter name="NAME" value="  Endereco "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${bairroFuncionario}">
+                        <BindingParameter name="NAME" value="  Bairro "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${cidadeFuncionario}">
+                        <BindingParameter name="NAME" value="  Cidade "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${ufFuncionario}">
+                        <BindingParameter name="NAME" value=" UF"/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${foneFuncionario}">
+                        <BindingParameter name="NAME" value="  Fone "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${celFuncionario}">
+                        <BindingParameter name="NAME" value="    Cel "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${emailFuncionario}">
+                        <BindingParameter name="NAME" value="    Email "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${funcaoFuncionario}">
+                        <BindingParameter name="NAME" value="  Funcao "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${admissaoFuncionario}">
+                        <BindingParameter name="NAME" value="data de Admissao "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${foto}">
+                        <BindingParameter name="NAME" value="     Foto"/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${departamentoFuncionario}">
+                        <BindingParameter name="NAME" value="Departamento "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${codDepartamento}">
+                        <BindingParameter name="NAME" value="Cod Departamento"/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${loginFuncionario}">
+                        <BindingParameter name="NAME" value="  Login "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${senhaFuncionario}">
+                        <BindingParameter name="NAME" value=" Senha "/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${acessoTotal}">
+                        <BindingParameter name="NAME" value="Acesso Total"/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Boolean.class"/>
+                      </Subbinding>
+                    </BindingProperty>
+                  </BindingProperties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel1">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Buscar"/>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jTextField1" min="-2" pref="500" max="-2" attributes="0"/>
+                          <EmptySpace pref="544" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Localizar:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="jTextField1">
+                  <BindingProperties>
+                    <BindingProperty name="text" source="masterTable" sourcePath="${rowSorter}" target="jTextField1" targetPath="text" updateStrategy="0" immediately="false">
+                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                      <Property name="converter" type="org.jdesktop.beansbinding.Converter" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <ComponentRef name="rowSorterToStringConverter1"/>
+                      </Property>
+                    </BindingProperty>
+                  </BindingProperties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Alterar/Incluir Funcion&#xe1;rios">
+                <Property name="tabTitle" type="java.lang.String" value="Alterar/Incluir Funcion&#xe1;rios"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="448" max="-2" attributes="0"/>
+                              <Component id="bairroFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="bairroFuncionarioField" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="ufFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="ufFuncionarioField" min="-2" pref="65" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="cidadeFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cidadeFuncionarioField" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="foneFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jTextField4" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="celFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="celFuncionarioField" min="-2" pref="99" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="loginFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="loginFuncionarioField" min="-2" pref="217" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="emailFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="emailFuncionarioField" min="-2" pref="151" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="senhaFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="senhaFuncionarioField" min="-2" pref="130" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="admissaoFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" pref="118" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="107" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="admissaoFuncionarioField" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="enderecoFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jTextField6" min="-2" pref="370" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="nomeFuncionarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cpfFuncionarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="cpfFuncionarioField" min="-2" pref="227" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="rgFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="nomeFuncionarioField" min="-2" pref="454" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="364" max="-2" attributes="0"/>
+                                      <Component id="rgFuncionarioField" min="-2" pref="119" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="departamentoFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="orgaoFuncionarioLabel" min="-2" pref="102" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jComboBox1" min="-2" pref="104" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="funcaoFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="funcaoFuncionarioField" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="orgaoFuncionarioField" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cepFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cepFuncionarioField" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="111" max="-2" attributes="0"/>
+                          <Component id="buttonAbrir" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="nomeFuncionarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="nomeFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="departamentoFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="funcaoFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="funcaoFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cpfFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rgFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cpfFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rgFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="orgaoFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="orgaoFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cepFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cepFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="bairroFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="enderecoFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bairroFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ufFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ufFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cidadeFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cidadeFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="foneFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="celFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="celFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="admissaoFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="admissaoFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="loginFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="loginFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="senhaFuncionarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="senhaFuncionarioField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane1" min="-2" pref="118" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="buttonAbrir" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="68" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="nomeFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nome:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="orgaoFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Orgao Expedidor:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="funcaoFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Funcao:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="loginFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Login:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="senhaFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Senha:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="admissaoFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="data de Admissao:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cpfFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cpf:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="rgFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Identidade:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="foneFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fone:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="celFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Celular:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="emailFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Email:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="enderecoFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Endereco:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="bairroFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bairro :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cidadeFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cidade:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ufFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Uf:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cepFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cep:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="departamentoFuncionarioLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Departamento :"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <Properties>
+                <Property name="wheelScrollingEnabled" type="boolean" value="false"/>
+              </Properties>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="labelImagem">
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="buttonAbrir">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Abrir Imagem..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAbrirActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox1">
+              <Properties>
+                <Property name="renderer" type="javax.swing.ListCellRenderer" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="departamentoListCellRenderer1"/>
+                </Property>
+              </Properties>
+              <BindingProperties>
+                <BindingProperty name="elements" source="departamentoList" target="jComboBox1" targetPath="elements" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="selectedItem" source="masterTable" sourcePath="masterTable[${selectedElement.codDepartamento.codDepartamento}]" target="jComboBox1" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="jComboBox1" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="nomeFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.nomeFuncionario}" target="nomeFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="nomeFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="funcaoFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.funcaoFuncionario}" target="funcaoFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="funcaoFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cpfFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.cpfFuncionario}" target="cpfFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="cpfFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="rgFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.rgFuncionario}" target="rgFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="rgFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="orgaoFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.orgaoFuncionario}" target="orgaoFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="orgaoFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField6">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.enderecoFuncionario}" target="jTextField6" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="jTextField6" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="ufFuncionarioField">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="27">
+                    <StringItem index="0" value=" AC"/>
+                    <StringItem index="1" value=" AL"/>
+                    <StringItem index="2" value=" AP"/>
+                    <StringItem index="3" value=" AM"/>
+                    <StringItem index="4" value=" BA"/>
+                    <StringItem index="5" value=" CE"/>
+                    <StringItem index="6" value=" DF"/>
+                    <StringItem index="7" value=" ES"/>
+                    <StringItem index="8" value=" GO"/>
+                    <StringItem index="9" value=" MA"/>
+                    <StringItem index="10" value=" MT"/>
+                    <StringItem index="11" value=" MS"/>
+                    <StringItem index="12" value=" MG"/>
+                    <StringItem index="13" value=" PA"/>
+                    <StringItem index="14" value=" PB"/>
+                    <StringItem index="15" value=" PR"/>
+                    <StringItem index="16" value=" PE"/>
+                    <StringItem index="17" value=" PI"/>
+                    <StringItem index="18" value=" RJ"/>
+                    <StringItem index="19" value=" RN"/>
+                    <StringItem index="20" value=" RS"/>
+                    <StringItem index="21" value=" RO"/>
+                    <StringItem index="22" value=" RR"/>
+                    <StringItem index="23" value=" SC"/>
+                    <StringItem index="24" value=" SP"/>
+                    <StringItem index="25" value=" SE"/>
+                    <StringItem index="26" value=" TO"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <BindingProperties>
+                <BindingProperty name="selectedItem" source="masterTable" sourcePath="${selectedElement.ufFuncionario}" target="ufFuncionarioField" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="ufFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="bairroFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.bairroFuncionario}" target="bairroFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="bairroFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cidadeFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.cidadeFuncionario}" target="cidadeFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="cidadeFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cepFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.cepFuncionario}" target="cepFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="cepFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField4">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.foneFuncionario}" target="jTextField4" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="jTextField4" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="celFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.celFuncionario}" target="celFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="celFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="emailFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.emailFuncionario}" target="emailFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="emailFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="admissaoFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.admissaoFuncionario}" target="admissaoFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="admissaoFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="senhaFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.senhaFuncionario}" target="senhaFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="senhaFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="loginFuncionarioField">
+              <BindingProperties>
+                <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.loginFuncionario}" target="loginFuncionarioField" targetPath="text" updateStrategy="0" immediately="false">
+                  <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+                </BindingProperty>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="loginFuncionarioField" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox2">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="SIM"/>
+                    <StringItem index="1" value="N&#xc3;O"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <BindingProperties>
+                <BindingProperty name="selectedItem" source="masterTable" sourcePath="${selectedElement.acessoTotal}" target="jComboBox2" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="jComboBox2" targetPath="enabled" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Acesso Total:"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

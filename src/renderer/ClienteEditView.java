@@ -4,9 +4,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.siscom.view;
+package renderer;
 
-import bean.Cliente;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.IOException;

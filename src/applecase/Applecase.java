@@ -5,7 +5,7 @@
  */
 package applecase;
 
-import br.com.siscom.view.Menu;
+import cadastro.Menu;
 
 /**
  *
