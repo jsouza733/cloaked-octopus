@@ -14,6 +14,7 @@
     <class>bean.Funcionario</class>
     <class>renderer.ClienteEndereco</class>
     <class>renderer.Cliente</class>
+    <class>renderer.Bairros</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/siscomjava"/>
       <property name="javax.persistence.jdbc.password" value="Moises@125"/>
